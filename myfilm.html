@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Kind of Film</title>
+    <link rel="stylesheet" href="myfilm.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<body>
+    <!-- Keep existing navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+          <a href="index.html" class="logo">Prince<span>.</span></a>
+          <a href="#nav-menu" class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+          </a>
+          <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="bio.html">Biography</a>
+            <a href="skills.html">Skills</a>
+            <a href="resume.html">Resume</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="mybeat.html">My Beat</a>
+            <a href="myfilm.html" class="active">Movie Shows</a>
+            <a href="mytvshows.html">TV Shows</a>
+            <a href="place.html">Dream Places</a>
+            <a href="bucket.html">Bucket List</a>
+
+
+          </div>
+        </div>
+    </nav>
+
+    <!-- Keep existing header -->
+    <header class="film-header" id="top">
+        <div class="header-content">
+            <h1>My Kind of Film: Movies</h1>
+            <p>Exploring the stories that captivate my imagination and touch my heart</p>
+        </div>
+    </header>
+    
+    <!-- Category Navigation -->
+    <div class="category-nav">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#comedy" class="category-nav-link">Comedy</a>
+                <a href="#Drama" class="category-nav-link">Drama</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="films-container">
+        <div id="all"></div>
+        
+        <!-- Anime Section -->
+        <section id="comedy" class="category-section">
+            <h2>Comedy</h2>
+            <p>Comedy movies are all about bringing joy and laughter, offering lighthearted entertainment that’s perfect for lifting your mood and escaping the stress of everyday life.</p>
+            
+            <div class="films-grid">
+                <!-- Rush Hour 3 -->
+                <div class="film-card">
+                    <div class="film-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jqJJdXE_lG4?si=KnP6baaXcOoDxhWt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="film-info">
+                        <h3 class="film-title">Rush Hour 3</h3>
+                        <div class="film-director">
+                            <i class="fas fa-film"></i>
+                            <span>Brett Ratner</span>
+                        </div>
+                        <div class="film-stars">
+                            <i class="fas fa-star"></i>
+                            <span>Jackie Chan, Chris Tucker</span>
+                        </div>
+                        <p class="film-synopsis">An assassination attempt sends Inspector Lee and Detective Carter to Paris to protect a key source as they try to bring the Triad gang to justice.</p>
+                        <div class="film-tags">
+                            <span class="tag">Comedy</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Crime</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sonic -->
+                <div class="film-card">
+                    <div class="film-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FfJvZCqNIWQ?si=IFy3v6kzTmRfPm_a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="film-info">
+                        <h3 class="film-title">Sonic (The Hedgehog)</h3>
+                        <div class="film-director">
+                            <i class="fas fa-film"></i>
+                            <span>Jeff Fowler</span>
+                        </div>
+                        <div class="film-stars">
+                            <i class="fas fa-star"></i>
+                            <span>James Marsden, Jim Carrey</span>
+                        </div>
+                        <p class="film-synopsis">In this thrilling action-comedy, a superfast extraterrestrial hedgehog teams up with a sheriff to stop an evil scientist.</p>
+                        <div class="film-tags">
+                            <span class="tag">Comedy</span>
+                            <span class="tag">Family Movies</span>
+                            <span class="tag">Kids Movies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Champions -->
+                <div class="film-card">
+                    <div class="film-card">
+                        <div class="film-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pCHiWnj5Oek?si=_Kid27q0txTtbwem" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                         </div>
+                        <div class="film-info">
+                            <h3 class="film-title">Champions</h3>
+                            <div class="film-director">
+                                <i class="fas fa-film"></i>
+                                <span>Bobby Farrelly</span>
+                            </div>
+                            <div class="film-stars">
+                                <i class="fas fa-star"></i>
+                                <span>Woody Harrelson, Kaitlin Olson</span>
+                            </div>
+                            <p class="film-synopsis">Facing court-ordered community service, a scornful basketball coach reluctantly trains a scrappy team of players with intellectual disabilities.</p>
+                            <div class="film-tags">
+                                <span class="tag">Comedy</span>
+                                <span class="tag">Sports</span>
+                                <span class="tag">US Movies</span>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+        
+        <!--Drama Section -->
+        <section id="Drama" class="category-section">
+            <h2>Drama</h2>
+            <p>Filipino drama films dive deep into emotional and relatable storytelling, showcasing the richness of Filipino culture, family values, and the struggles that reflect real-life experiences.</p>
+            
+            <div class="films-grid">
+                <!-- Guilty Pleasure -->
+                <div class="film-card">
+                    <div class="film-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xFINYOthUM0?si=Zjz71eEQMZ28RSqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="film-info">
+                        <h3 class="film-title">Guilty Pleasure</h3>
+                        <div class="film-director">
+                            <i class="fas fa-film"></i>
+                            <span>Connie Macatuno</span>
+                        </div>
+                        <div class="film-stars">
+                            <i class="fas fa-star"></i>
+                            <span>Lovi Poe, JM de Guzman</span>
+                        </div>
+                        <p class="film-synopsis">A defense attorney in a high-stakes case navigates upheavals in her career and personal life amidst betrayal, passion and the return of a past lover.</p>
+                        <div class="film-tags">
+                            <span class="tag">Filipino</span>
+                            <span class="tag">Drama</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hello, Love, Again -->
+                <div class="film-card">
+                    <div class="film-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LAgv1MnA8vA?si=XUaovajhlrfq3H3f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="film-info">
+                        <h3 class="film-title">Hello, Love, Again</h3>
+                        <div class="film-director">
+                            <i class="fas fa-film"></i>
+                            <span>Cathy Garcia-Sampana</span>
+                        </div>
+                        <div class="film-stars">
+                            <i class="fas fa-star"></i>
+                            <span>Kathryn Bernardo, Alden Richards</span>
+                        </div>
+                        <p class="film-synopsis">Driven apart by COVID-19, two exes continue their lives on opposite sides of the world — until a surprise reunion offers them a second chance..</p>
+                        <div class="film-tags">
+                            <span class="tag">Filipino</span>
+                            <span class="tag">Drama</span>
+                            <span class="tag">Romantic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rewind -->
+                <div class="film-card">
+                    <div class="film-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mnY2vON_tUg?si=Y5bHQ0Ha2V42SvIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="film-info">
+                        <h3 class="film-title">Rewind</h3>
+                        <div class="film-director">
+                            <i class="fas fa-film"></i>
+                            <span>Mae Czarina Cruz</span>
+                        </div>
+                        <div class="film-stars">
+                            <i class="fas fa-star"></i>
+                            <span>Dingdong Dantes, Marian Rivera</span>
+                        </div>
+                        <p class="film-synopsis">A twist of fate takes a man on a mission to save his late wife from a fatal car crash — making him realize what it means to truly love someone.</p>
+                        <div class="film-tags">
+                            <span class="tag">Filipno</span>
+                            <span class="tag">Drama</span>
+                            <span class="tag">Romantic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Keep existing footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Prince Gallardo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,238 @@
+.bio-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 8rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bio-header::before {
+  content: ''; /*ensures the pseudo-element is created but contains no text.*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+  z-index: 1; 
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bio-header h1 {
+  margin-bottom: 1.5rem;
+}
+
+.bio-header p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Bio Navigation */
+.bio-nav {
+  background-color: var(--primary);
+  padding: 0 0 1rem;
+  position: sticky;
+  top: 0;
+  /* z-index: 100; */
+}
+.nav-links {
+  /* display: flex;    */
+  justify-content: center;
+  gap: 1.5rem;
+  /* flex-wrap: wrap; */
+  
+}
+
+
+/* Bio Timeline */
+.bio-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bio-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+}
+
+.timeline-item {
+  margin-bottom: 5rem;
+  position: relative;
+  scroll-margin-top: 8rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-content h2 {
+  margin-bottom: 1rem;
+  color: #333333;
+  position: relative;
+  display: inline-block;
+}
+.timeline-content h2::after {
+  content: ''; /*ensures the pseudo-element is created but contains no text.*/
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent);
+}
+.timeline-item:nth-child(even) .timeline-content {
+  flex-direction: row-reverse;
+}
+
+.timeline-text {
+  flex: 0 0 60%; /*shorthand for the flex-grow, flex-shrink, and flex-basis */
+  position: relative;
+  /* z-index: 2; */
+  text-align: justify;
+}
+
+.timeline-text h2 {
+  margin-bottom: 1rem;
+  color: #333333;
+  position: relative;
+  display: inline-block;
+}
+.timeline-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.timeline-text p {
+  line-height: 1.8;
+}
+
+/* Bio Lightbox */
+.bio-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.bio-lightbox:target {
+  opacity: 1;
+  visibility:visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain; /* whole image is shown, but may leave empty space*/
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.lightbox-caption {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.close-lightbox {
+  position: relative;
+  left: 150%;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+  color: #e74c3c;
+}
+.go-top {
+  color: #3498db;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-left: 82%;
+}
+
+.go-top:hover {
+  color:#e74c3c;
+}
+
+.go-top i {
+  transition: all 0.3s ease;
+}
+
+.go-top:hover i {
+  transform: translateY(-5px);
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /*Creates 2 columns, each taking up equal space.*/
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.grid-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid var(--border, #9a7e6f);
+  transition: transform 0.3s ease;
+}
+
+.grid-image:hover {
+  transform: scale(1.05); /*zoom in effect when it hover*/
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  
+}
+

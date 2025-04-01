@@ -1,0 +1,276 @@
+.skills-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 8rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  /* z-index: 2; */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skills-header h1 {
+  margin-bottom: 1.5rem;
+}
+
+.skills-header p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* navigation */
+.skills-nav {
+  background-color: #2c3e50;
+  padding: 0 0 1rem;
+  position: sticky;
+  top: 0;
+  /* z-index: 100; */
+}
+
+.nav-links {
+  /* display: flex; */
+  justify-content: center;
+  gap: 1.5rem;
+  /* flex-wrap: wrap; */
+  /* text-align: center; */
+}
+
+.skills-nav-link {
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.skills-page {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+}
+
+.skills-item {
+  margin-bottom: 5rem;
+  position: relative;
+  scroll-margin-top: 5rem; /*It adds space above the target element when scrolled into view.*/
+}
+
+.skills-item:last-child {
+  margin-bottom: 0;
+}
+
+.skills-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+.skills-item:nth-child(even) .skills-content {
+  flex-direction: row-reverse;
+}
+
+.skills-image {
+  flex: 0 0 40%;
+  position: relative;
+  /* z-index: 2; */
+}
+
+.skills-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* .image-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-link:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+} */
+
+.skills-text {
+  flex: 0 0 60%;
+  position: relative;
+  /* z-index: 2; */
+}
+
+.skills-text h2 {
+  margin-bottom: 1rem;
+  color: #333333;
+  position: relative;
+  display: inline-block;
+}
+.skills-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent);
+}
+.skills-text p {
+  line-height: 1.8;
+  text-align: justify;
+
+}
+
+
+/* Bio Lightbox */
+.skills-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.skills-lightbox:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.lightbox-caption {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.close-lightbox {
+  position: relative;
+  left: 150%;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+  color: #e74c3c;
+}
+
+.go-top{
+  color: rgb(215, 26, 26);
+  padding: 8px 14px ;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  align-items: center;  
+}
+.go-top {
+  color: #3498db;
+  display: inline-flex;
+  font-weight: 600;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-left: 82%;  
+  
+}
+
+.go-top:hover {
+  color:#e74c3c;
+}
+
+.go-top i {
+  transition: all 0.3s ease;
+}
+
+.go-top:hover i {
+  transform: translateY(-5px);
+}
+/* Responsive */
+ @media (max-width: 992px) {
+  .bio-timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-content {
+    flex-direction: column !important;
+    gap: 1.5rem;
+    padding-left: 3rem;
+  }
+  
+  .timeline-image, 
+  .timeline-text {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+} 
+
+@media (max-width: 768px) {
+  .bio-nav {
+    top: 70px;
+  }
+  
+  .bio-nav-links {
+    gap: 0.5rem;
+  }
+  
+  .bio-nav-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+} 

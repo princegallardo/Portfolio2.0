@@ -1,0 +1,166 @@
+.gallery-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gallery-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+    /* z-index: 1; */
+  }
+  
+  .header-content {
+    position: relative;
+    /* z-index: 2; */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .gallery-header h1 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .gallery-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .gallery-intro p {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Gallery Filter */
+  .gallery-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .section-intro{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+  .filter-btn {
+    background-color: white;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: #e0e0e0;
+  }
+  
+  .filter-btn:hover {
+    background-color: #3498db;
+    color: white;
+  }
+   
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*automatically adjust based on available space.*/
+    gap: 1.5rem;
+  }
+  
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3; /*width is 4 units, height is 3 units.*/
+  }
+  
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*The image fills the container*/
+    transition: all 0.3s ease;
+  }
+  
+  .gallery-item:hover .gallery-image img {
+    transform: scale(1.1);
+  }
+  
+  .gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+  
+  .overlay-content h3 {
+    color:white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .category {
+    color: #e74c3c;
+    font-weight: 500;
+  }
+ 
+  #nature:target ~ .gallery-grid .gallery-item:not(.nature), /* all .gallery-items without .nature class will be display none */
+  #events:target ~ .gallery-grid .gallery-item:not(.events),  /* same logic to events and personal */
+  #personal:target ~ .gallery-grid .gallery-item:not(.personal) {
+     display: none;
+     
+  }
+  /*when click the button it will automatically change the bg color and text color it's like active button*/
+  #all:target ~ .gallery-filter .filter-btn[href="#all"], 
+  #nature:target ~ .gallery-filter .filter-btn[href="#nature"],
+  #events:target ~ .gallery-filter .filter-btn[href="#events"],
+  #personal:target ~ .gallery-filter .filter-btn[href="#personal"] {
+    background-color: #e74c3c;
+    color: white;
+  }
+  .gallery-filter .filter-btn[href="#all"] {
+    background-color: #e74c3c;
+    color: white;
+}
+/*Remove default "All" highlight when another filter is selected*/
+#nature:target ~ .gallery-filter .filter-btn[href="#all"], 
+#events:target ~ .gallery-filter .filter-btn[href="#all"],
+#personal:target ~ .gallery-filter .filter-btn[href="#all"] {
+    background-color: transparent; 
+    color: inherit;
+}

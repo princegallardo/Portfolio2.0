@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Places to Visit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Dream Places*/
+        .places-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .places-header::before {
+            content: ''; /*ensures the pseudo-element is created but contains no text.*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+            /* z-index: 1; */
+        }
+        
+        .header-content {
+            position: relative;
+            /* z-index: 2; */
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+            margin-top:3.5rem ;
+        }
+        
+        .places-header h1 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .places-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Map Container */
+        .map-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } 
+        
+        .map-container h2 {
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        
+        .map-wrapper {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        } 
+        
+        .world-map {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            overflow: hidden;
+        }
+            
+        
+        
+        /* Tooltip Styles */
+        .map-tooltip {
+            position:fixed;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        
+        /* area:hover + .map-tooltip {
+            opacity: 1;
+        } */
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .destination-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .destination-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+          <a href="index.html" class="logo">Prince<span>.</span></a>
+          <a href="#nav-menu" class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+          </a>
+          <div class="nav-links" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="bio.html">Biography</a>
+            <a href="skills.html">Skills</a>
+            <a href="resume.html">Resume</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="mybeat.html">My Beat</a>
+            <a href="myfilm.html">Movie Shows</a>
+            <a href="mytvshows.html">TV Shows</a>
+            <a href="place.html" class="active">Dream Places</a>
+            <a href="bucket.html">Bucket List</a>
+
+          </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="places-header" id="top">
+        <div class="header-content">
+            <h1>Dream Places to Visit</h1>
+            <p>Exploring the destinations that captivate my imagination and inspire my wanderlust</p>
+        </div>
+    </header>
+    
+    <!-- Interactive Map Section -->
+    <section class="map-container">
+        <h2>Click any image below</h2>
+        <div class="map-wrapper">
+            <img src="IMAGES/map.jpg" title="World Map" class="world-map" usemap="#worldmap">
+            
+            <map name="worldmap">
+                <!-- Japan -->
+                <area shape="rect" coords="690,461,955,766" 
+                      href="japan.html" alt="Japan" title="Japan">
+                
+                <!-- Italy -->
+                <area shape="rect" coords="7,6,152,409" 
+                      href="italy.html" alt="Italy" title="Italy">
+                
+                <!-- Peru -->
+                <area shape="poly" coords="194,337,194,446,13,448,9,742,50,767,266,766,318,718,353,644,355,629,370,567,344,457,317,413" 
+                      href="peru.html" alt="Peru" title="Peru">
+                
+                <!-- New Zealand -->
+                <area shape="circle" coords="812,220,200" 
+                      href="nz.html" alt="New Zealand" title="New Zealand">
+                
+                <!-- Iceland -->
+                <area shape="poly" coords="617,5,630,759,340,750,390,679,401,506,393,454,278,334,203,309,195,186,197,16"
+                      href="iceland.html" alt="Iceland" title="Iceland">
+            </map>
+            
+            <!-- Tooltips for each area -->
+            <div class="map-tooltip" id="japan-tooltip">Japan - Land of tradition and innovation</div>
+            <div class="map-tooltip" id="italy-tooltip">Italy - Art, history, and cuisine</div>
+            <div class="map-tooltip" id="peru-tooltip">Peru - Ancient civilizations and natural wonders</div>
+            <div class="map-tooltip" id="newzealand-tooltip">New Zealand - Breathtaking landscapes</div>
+            <div class="map-tooltip" id="iceland-tooltip">Iceland - Fire and ice wonderland</div> 
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Prince Gallardo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for tooltips -->
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const areas = document.querySelectorAll('area'); /*Retrieves all <area> elements in an image map.*/
+        const tooltips = document.querySelectorAll('.map-tooltip'); /*Retrieves all .map-tooltip elements (the info that appears when hovering).*/
+    
+        const mapContainer = document.querySelector('.map-container'); /* Retrives .map-container, parent element ng map.*/
+        const mapContainerRect = mapContainer ? mapContainer.getBoundingClientRect() : { left: 0, top: 0 }; /*Kinukuha ang position at sukat ng container sa screen. (?)Ternary Operator if walang .map-container, gagamitin ang { left: 0, top: 0 } para maiwasan ang error.*/
+    
+    areas.forEach(function(area, index) { 
+        area.addEventListener('mouseover', function(e) {
+            const tooltip = tooltips[index]; /*retrive its corresponding tooltip*/
+            tooltip.style.display = 'block'; /*display the tooltip*/
+            tooltip.style.opacity = '1';
+            positionTooltip(e, tooltip); /*call the positionTooltip(e, tooltip) para ilagay ito malapit sa cursor*/ 
+        });
+        
+        area.addEventListener('mouseout', function() {
+            const tooltip = tooltips[index];
+            tooltip.style.opacity = '0'; /*when the mouse is out the tooltip will be display as none and 0*/
+            tooltip.style.display = 'none';
+        });
+        
+        area.addEventListener('mousemove', function(e) {
+            const tooltip = tooltips[index];
+            positionTooltip(e, tooltip); /*call positionTooltip para sumunod ang tooltip kung saan man tumutok ang cursor*/
+        });
+    });
+    
+    function positionTooltip(e, tooltip) { /*adjusting the tooltip depending on cursor and screen size*/
+        const x = e.clientX; /*gets the horizontal and vertical position of curson on screen*/
+        const y = e.clientY;
+        
+        const containerX = x - mapContainerRect.left; /*Offsets the cursor position based on the map-container*/
+        const containerY = y - mapContainerRect.top;
+        
+        tooltip.style.position = 'fixed'; /*position fixed*/
+        tooltip.style.left = (x + 10) + 'px'; /*To move 10 pixels away from the cursor.*/
+        tooltip.style.top = (y + 10) + 'px'; /*gets the correct position of vertical*/
+        
+        const tooltipRect = tooltip.getBoundingClientRect();  /*gets the size of tooltip*/
+        const viewportWidth = window.innerWidth; /*gets the size of screen*/
+        const viewportHeight = window.innerHeight;
+        
+        if (tooltipRect.right > viewportWidth) {
+            tooltip.style.left = (x - tooltipRect.width - 10) + 'px'; /*Kapag lumalampas ang tooltip sa right edge ng screen, ililipat ito sa kaliwa.*/
+        }
+        
+        if (tooltipRect.bottom > viewportHeight) {
+            tooltip.style.top = (y - tooltipRect.height - 10) + 'px'; /*Kapag lumalampas sa baba ng screen ang tooltip, ililipat ito pataas.*/
+        }
+    }
+});
+    </script>
+</body>
+</html>

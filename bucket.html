@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucket List | Prince Gallardo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Bucket List specific styles */
+    .bucket-header {
+      color: white;
+      background-color: #2c3e50;
+      padding: 4rem 0 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bucket-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(52, 152, 219, 0.3), rgba(231, 76, 60, 0.3));
+      z-index: 1;
+      }
+        
+    .head-container{
+       position: relative;
+       z-index: 2;
+       max-width: 800px;
+       margin: 0 auto;
+       margin-bottom: 3rem;
+       margin-top:3.5rem ;
+      }
+    
+    .bucket-header h1 {
+      margin-top: 1.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .bucket-header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .bucket-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+     
+
+    }
+    
+    .category-btn {
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    
+    .category-btn.active {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .category-btn:hover{
+      background-color: #3498db;
+      color: white;
+    }
+    
+    .bucket-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    
+    .bucket-item {
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .bucket-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(84, 71, 63, 0.2);
+    }
+    
+    .bucket-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .bucket-content {
+      padding: 20px;
+    }
+    
+    .bucket-content h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    
+    .bucket-content p {
+      color: #333333;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .bucket-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #3498db;
+    }
+    
+    .status-pending {
+      color: #3498db;
+    }
+    
+    .status-completed {
+      color: #4CAF50;
+    }
+    
+    .status-in-progress {
+      color: #3498db;
+    }
+    
+    .bucket-category {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+    
+    /* @media (max-width: 768px) {
+      .bucket-items {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      
+      .bucket-header {
+        padding: 40px 0;
+      }
+      
+      .bucket-header h1 {
+        font-size: 2rem;
+      }
+    } */
+    
+      .bucket-items {
+        grid-template-columns: repeat(auto-fill, minmax(3, 1fr));
+        gap: 20px;
+      }
+      
+      .bucket-header {
+        padding: 40px 0;
+      }
+      
+      .bucket-header h1 {
+        font-size: 2rem;
+      }
+    
+    
+      .bucket-items {
+        grid-template-columns: (3, 1fr);
+      }
+      
+      .category-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Prince<span>.</span></a>
+      <a href="#nav-menu" class="mobile-toggle">
+        <i class="fas fa-bars"></i>
+      </a>
+      <div class="nav-links" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="bio.html">Biography</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="mybeat.html">My Beat</a>
+        <a href="myfilm.html">My Films</a>
+        <a href="mytvshows.html">TV Shows</a>
+        <a href="place.html">Dream Places</a>
+        <a href="bucket.html" class="active">Bucket List</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bucket-header" id="top">
+    <div class="head-container">
+      <h1>My Bucket List</h1>
+      <p>A collection of experiences, achievements, and adventures I hope to accomplish in my lifetime. These goals represent my aspirations, dreams, and the mark I wish to leave on the world.</p>
+    </div>
+  </header>
+   
+  <section class="section">
+    <div class="container">
+      <div class="bucket-categories">
+        <button class="category-btn active" data-filter="all">All</button>
+        <button class="category-btn" data-filter="travel">Travel</button>
+        <button class="category-btn" data-filter="career">Career</button>
+        <button class="category-btn" data-filter="personal">Personal</button>
+        <button class="category-btn" data-filter="adventure">Adventure</button>
+      </div>
+
+      <div class="bucket-items">
+        <!-- Travel Items -->
+        <div class="bucket-item" data-category="travel">
+          <img src="IMAGES/japabflag.jpg" alt="Japan" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Travel</span>
+            <h3>Visit Japan</h3>
+            <p>Experience the blend of ancient traditions and cutting-edge technology in Japan. Visit Tokyo, Kyoto, and explore the Japanese countryside.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bucket-item" data-category="travel">
+          <img src="IMAGES/korea.jpg" alt="South Korea" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Travel</span>
+            <h3>Explore South Korea</h3>
+            <p>Immerse myself in Korean culture, visit historical sites, try authentic Korean cuisine, and experience the vibrant city life of Seoul.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bucket-item" data-category="travel">
+          <img src="IMAGES/switz.jpg" alt="Switzerland" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Travel</span>
+            <h3>Visit Switzerland</h3>
+            <p>Experience the breathtaking Swiss Alps, visit picturesque villages, and enjoy the serene lakes and landscapes of Switzerland.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Career Items -->
+        <div class="bucket-item" data-category="career">
+          <img src="IMAGES/portfolio.png" alt="PortFolio" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Career</span>
+            <h3>Develop a very own PortFolio</h3>
+            <p>Create a Web Design Port Folio that will showcase my skills.</p>
+            <div class="bucket-status">
+              <i class="fas fa-spinner fa-spin status-in-progress"></i>
+              <span>In Progress</span>
+            </div>
+          </div>
+        </div>
+
+   
+
+        <!-- Personal Items -->
+        <div class="bucket-item" data-category="personal">
+          <img src="IMAGES/motocat.jpg" alt="motocar" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Personal</span>
+            <h3>Collect a Motors and Cars</h3>
+            <p>Buy and build my own motor and cars</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bucket-item" data-category="personal">
+          <img src="IMAGES/guitar.jpg" alt="Book Writing" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Personal</span>
+            <h3>Learn how to play Guitar</h3>
+            <p>I wanted to learn how to play guitar to able to play any music i want everytime i got bored</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adventure Items -->
+        <div class="bucket-item" data-category="adventure">
+          <img src="IMAGES/sky.jpg" alt="Skydiving" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Adventure</span>
+            <h3>Go Skydiving</h3>
+            <p>Experience the thrill of freefalling from an airplane and the breathtaking view from thousands of feet in the air.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bucket-item" data-category="adventure">
+          <img src="IMAGES/diving.jpg" alt="Scuba Diving" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Adventure</span>
+            <h3>Scuba Dive in a Coral Reef</h3>
+            <p>Explore the underwater world and witness the vibrant marine life and coral ecosystems firsthand.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bucket-item" data-category="adventure">
+          <img src="IMAGES/snow.jpg" alt="Snow Skiing" class="bucket-img">
+          <div class="bucket-content">
+            <span class="bucket-category">Adventure</span>
+            <h3>Snow Skiing </h3>
+            <p>Skiing is a winter sport where people glide over snow using skis attached to their boots. It can be recreational or competitive.</p>
+            <div class="bucket-status">
+              <i class="fas fa-hourglass-half status-pending"></i>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:princegallardo@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2024 Prince Gallardo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.category-btn');
+      const bucketItems = document.querySelectorAll('.bucket-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {  //Each button has an event listener waiting for a click.
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter'); //This will be used to determine which items should be displayed
+          
+          // Show/hide items based on filter
+          bucketItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) { // If the filter is 'all', show all items. Otherwise, only show items with the same data-category.
+              item.style.display = 'block'; 
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
